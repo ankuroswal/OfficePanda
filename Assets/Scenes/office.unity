@@ -652,13 +652,13 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 672674932}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 10
   m_AngularDrag: 2
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!114 &672674934
 MonoBehaviour:
@@ -673,24 +673,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 1
   movement: {x: 0, y: 0, z: 0}
-  limitLow: {x: -5.5, y: 0, z: -3}
-  limitHigh: {x: 6, y: 20, z: 3}
-  wristMovementSpeed: 10
-  armRotateSpeed: 50
+  limitLow: {x: -6, y: 0, z: -3}
+  limitHigh: {x: 6.5, y: 20, z: 4}
+  upDownMovementSpeed: 500
+  wristMovementSpeed: 100
+  armRotateSpeed: 20
   armRotationDamping: 0.5
-  armRotateMin: 0
-  armRotateMax: 5
-  mouseSpeedLimitLow: 30
-  mouseSpeedLimitHigh: 100
-  xDeadZone: 0.3
-  yDeadZone: 0.3
+  armRotateMin: 200
+  armRotateMax: 360
+  mouseSpeedLimitLow: 100
+  mouseSpeedLimitHigh: 400
 --- !u!4 &672674935
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 672674932}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.17364784, w: -0.98480785}
   m_LocalPosition: {x: 2.48, y: 4.58, z: 2.177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1793,6 +1792,7 @@ GameObject:
   - 33: {fileID: 2084240209}
   - 135: {fileID: 2084240208}
   - 23: {fileID: 2084240207}
+  - 54: {fileID: 2084240211}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1857,3 +1857,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!54 &2084240211
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2084240206}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

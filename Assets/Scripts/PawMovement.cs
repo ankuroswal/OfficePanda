@@ -12,6 +12,7 @@ public class PawMovement : MonoBehaviour {
     public Vector3 limitLow;
     public Vector3 limitHigh;
 
+    public float upDownMovementSpeed = 2f;
     public float wristMovementSpeed;
     public float armRotateSpeed;
     public float armRotationDamping;
@@ -27,8 +28,7 @@ public class PawMovement : MonoBehaviour {
     private float armRotation;
     private float totalArmRotation;
 
-    public float xDeadZone = 0.3f;
-    public float yDeadZone = 0.3f;
+    
     // Use this for initialization
     void Awake ()
     {
@@ -58,47 +58,48 @@ public class PawMovement : MonoBehaviour {
         if (Input.GetMouseButton(1))
         {
             movement = Vector3.zero;
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+
+            armRotation -= Input.GetAxis("Mouse X") * armRotateSpeed * Time.deltaTime;
+
         }
         else
-        {
+        { 
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
             movement = new Vector3(Input.GetAxis("Mouse X") * mouseSpeed, 0,
                                                Input.GetAxis("Mouse Y") * mouseSpeed);
         }
 
-        if (Input.GetMouseButton(1))
+
+
+        var d = Input.GetAxis("Mouse ScrollWheel");
+        if (d > 0f)
         {
-            //JointSpring js = wristJoint.spring;
-           // js.targetPosition =Mathf.Clamp(js.targetPosition + Input.GetAxis("Mouse Y") * wristMovementSpeed * Time.deltaTime,wristJoint.limits.min, wristJoint.limits.max);
-            //wristJoint.spring = js;
-            armRotation -= Input.GetAxis("Mouse X") * armRotateSpeed * Time.deltaTime;
+            // scroll up
+            movement.y = upDownMovementSpeed;
+        }
+        else if (d < 0f)
+        {
+            // scroll down
+            movement.y = -upDownMovementSpeed;
 
         }
 
         targetMouseSpeed = Mathf.Clamp(targetMouseSpeed, mouseSpeedLimitLow, mouseSpeedLimitHigh);
         mouseSpeed = Mathf.Lerp(mouseSpeed, targetMouseSpeed, Time.deltaTime * 5f);
-        rb.drag = mouseSpeed / 5f;
+        rb.drag = mouseSpeed / 10f;
         //loweringSpeed = mouseSpeed / 2f;
 
-        if (totalArmRotation > armRotateMax)
-        {
-            totalArmRotation = armRotateMax;
-            armRotation = 0;
-        }
-        if (totalArmRotation < armRotateMin)
-        {
-            totalArmRotation = armRotateMin;
-            armRotation = 0;
-        }
+        //if (myTransform.eulerAngles.z > armRotateMax)
+        //{
+        //    myTransform.Rotate(0, 0, armRotation);
+        //}
+        //else if (myTransform.eulerAngles.z < armRotateMin)
+        //{
+        //    myTransform.Rotate(0, 0, armRotation);
+        //}
 
-        totalArmRotation += armRotation;
         myTransform.Rotate(0, 0, armRotation);
-
-        //if (myTransform.rotation.z > 200)
-        //    myTransform.rotation = new Quaternion(myTransform.rotation.x, myTransform.rotation.y, 200, myTransform.rotation.w);
-
-        //if (myTransform.rotation.z < 110)
-        //    myTransform.rotation = new Quaternion(myTransform.rotation.x, myTransform.rotation.y, 100, myTransform.rotation.w);
-
 
         Vector3 pos = myTransform.position;
         if (pos.x < limitLow.x) pos.x = limitLow.x;
