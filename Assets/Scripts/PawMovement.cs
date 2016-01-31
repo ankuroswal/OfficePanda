@@ -31,7 +31,7 @@ public class PawMovement : MonoBehaviour {
     private Dictionary<ActionEvent, Rigidbody> previousObjects;
 
     public Collider grabCollider;
-    public Transform paw;
+    public GameObject paw;
     public List<ActionEvent> grabbedItems = new List<ActionEvent>();
 
     
@@ -151,7 +151,9 @@ public class PawMovement : MonoBehaviour {
         if (pos.z > limitHigh.z) pos.z = limitHigh.z;
 
         myTransform.position = pos;
-        paw = transform;
+        paw.transform.position = myTransform.position;
+        paw.transform.rotation = myTransform.rotation;
+
     }
 
     private void OnTriggerEnter(Collider other)
