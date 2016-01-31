@@ -19,7 +19,8 @@ public class FillTable : MonoBehaviour
 
     private void Flip()
     {
-        foreach (Transform child in Root.transform)
+        Collider[] collider = Root.GetComponentsInChildren<Collider>();
+        foreach (Collider child in collider)
         {
             if (child.gameObject.GetComponent<Rigidbody>() == null)
             {
