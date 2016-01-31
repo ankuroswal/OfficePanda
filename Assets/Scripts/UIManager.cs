@@ -21,12 +21,23 @@ public class UIManager : MonoBehaviour
     {
         TaskUI taskUi = Instantiate(taskUiPrefab, TaskListContent.transform.position, TaskListContent.transform.rotation) as TaskUI;
         taskUi.task = task;
-        taskUi.toggle.isOn = false;
-        taskUi.toggle.interactable = false;
-        taskUi.taskText.text = task.Name;
+        taskUi.taskImages = task.taskImages;
+        taskUi.SetImageByIndex(0);
         taskUi.gameObject.SetActive(true);
         taskUi.transform.SetParent(TaskListContent.transform);
         taskUi.transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    public void OnProceedTask(Task task)
+    {
+        var taskList = TaskListContent.gameObject.GetComponentsInChildren<TaskUI>(true);
+        for (int i = 0; i < taskList.Length; i++)
+        {
+            if (taskList[i].task == task)
+            {
+                taskList[i].SetImageByIndex(task.CurrentStep);
+            }
+        }
     }
 
     public void OnTaskComplete(Task task)
@@ -34,10 +45,10 @@ public class UIManager : MonoBehaviour
         var taskList = TaskListContent.gameObject.GetComponentsInChildren<TaskUI>(true);
         for (int i = 0; i < taskList.Length; i++)
         {
-            if (taskList[i].task == task)
-            {
-                taskList[i].toggle.isOn = true;
-            }
+            //if (taskList[i].task == task)
+            //{
+            //    taskList[i].toggle.isOn = true;
+            //}
         }
     }
 }
