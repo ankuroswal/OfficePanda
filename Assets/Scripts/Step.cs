@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Step  
+public class Step : MonoBehaviour
 {
     public ActionEvent Start;
     public ActionEvent End;

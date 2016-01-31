@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public List<Task> TaskList;
     public float timer;
 
+    public Task debugTask;
+
     public static GameManager Instance
     {
         get { return m_instance; }
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         m_instance = this;
         m_currentTask = 0;
+        AddTask(debugTask);
     }
 
     private void Update()
@@ -36,10 +39,10 @@ public class GameManager : MonoBehaviour
     
     public void ActionEventNotify(ActionEdge notifiedEdge)
     {
-        Debug.Log(notifiedEdge.StartAction.EventName + "---" + notifiedEdge.EndAction.EventName);
         ActionEdge currentEdge = TaskList[m_currentTask].GetCurrentStep().GetEdge();
         if (currentEdge.isEqual(notifiedEdge))
         {
+            Debug.Log(notifiedEdge.StartAction.EventName + "---" + notifiedEdge.EndAction.EventName);
             TaskList[m_currentTask].ProceedTask();
         }
     }

@@ -11,15 +11,19 @@ public class Task  : MonoBehaviour
 
     public bool ProceedTask()
     {
-        if (TaskComplete()) return false;
         m_currentstep++;
+
+        if (TaskComplete())
+        {
+            UIManager.Instance.OnTaskComplete(this);
+            return false;
+        }
         return true;
     }
 
     public bool TaskComplete()
     {
-        UIManager.Instance.OnTaskComplete(this);
-        return StepList.Count >= m_currentstep;
+        return StepList.Count <= m_currentstep;
     }
 
     public Step GetCurrentStep()

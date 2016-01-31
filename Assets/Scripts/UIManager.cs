@@ -35,10 +35,13 @@ public class UIManager : MonoBehaviour
 
     public void OnAddTask(Task task)
     {
-        TaskUI taskUi = Instantiate(taskUiPrefab) as TaskUI;
+        TaskUI taskUi = Instantiate(taskUiPrefab, TaskListContent.transform.position, TaskListContent.transform.rotation) as TaskUI;
         taskUi.task = task;
         taskUi.toggle.isOn = false;
         taskUi.taskText.text = task.Name;
+        taskUi.gameObject.SetActive(true);
+        taskUi.transform.SetParent(TaskListContent.transform);
+        taskUi.transform.localScale = new Vector3(1, 1, 1);
     }
 
     public void OnTaskComplete(Task task)

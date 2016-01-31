@@ -13,6 +13,7 @@ public class ActionEvent : MonoBehaviour
     public string EventName;
     public Collider Collider;
     public float SecondsToHappen;
+    public bool ParentEvent;
 
     private ActionEvent m_currentEvent;
     private bool m_triggerEvent;
@@ -24,10 +25,13 @@ public class ActionEvent : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other)
-    {
-        Init();
-        m_currentEvent = other.GetComponent<ActionEvent>();
-        m_triggerEvent = true;
+    { 
+        if (ParentEvent)
+        {
+            Init();
+            m_currentEvent = other.GetComponent<ActionEvent>();
+            m_triggerEvent = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
