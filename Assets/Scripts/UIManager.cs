@@ -12,8 +12,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        TimeSpan ts = TimeSpan.FromSeconds(GameManager.Instance.timer);
-        gameTime.text = ts.Minutes.ToString("00") + ":" + ts.Seconds.ToString("00");
+        gameTime.text = "Day: " + GameManager.Instance.day;
         stressMeter.fillAmount = GameManager.Instance.StressManager.Stress;
     }
 

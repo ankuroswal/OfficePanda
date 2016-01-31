@@ -45,8 +45,6 @@ public class PawMovement : MonoBehaviour {
     {
         targetMouseSpeed = mouseSpeed;
         myTransform = transform;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FixedUpdate()
