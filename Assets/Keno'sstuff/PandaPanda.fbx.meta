@@ -1,0 +1,693 @@
+fileFormatVersion: 2
+guid: 6a8aee76a5f479b48a716b60b56200ee
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: chest
+    100002: Geometry_GRP
+    100004: Head
+    100006: hipsLower
+    100008: hipsUpper
+    100010: Joints_GRP
+    100012: L_Elbow
+    100014: L_Foot
+    100016: L_Knee
+    100018: L_Shoulder
+    100020: L_Thigh
+    100022: L_Wrist
+    100024: master_Curve
+    100026: Neck
+    100028: //RootNode
+    100030: pSphere4
+    100032: R_Elbow
+    100034: R_Foot
+    100036: R_Knee
+    100038: R_Shoulder
+    100040: R_Thigh
+    100042: R_Wrist
+    100044: Root
+    400000: chest
+    400002: Geometry_GRP
+    400004: Head
+    400006: hipsLower
+    400008: hipsUpper
+    400010: Joints_GRP
+    400012: L_Elbow
+    400014: L_Foot
+    400016: L_Knee
+    400018: L_Shoulder
+    400020: L_Thigh
+    400022: L_Wrist
+    400024: master_Curve
+    400026: Neck
+    400028: //RootNode
+    400030: pSphere4
+    400032: R_Elbow
+    400034: R_Foot
+    400036: R_Knee
+    400038: R_Shoulder
+    400040: R_Thigh
+    400042: R_Wrist
+    400044: Root
+    4300000: pSphere4
+    7400000: Idle
+    7400002: T Pose
+    7400004: Walking
+    7400006: Attack
+    7400008: Death
+    7400010: Spawn
+    7400012: Special
+    7400014: 'Cast '
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: pSphere4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_GRP
+        weight: 1
+      - path: Geometry_GRP/pSphere4
+        weight: 1
+      - path: Joints_GRP
+        weight: 1
+      - path: Joints_GRP/Root
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee/L_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee/R_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck/Head
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: master_Curve
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: T Pose
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 1.10000002
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_GRP
+        weight: 1
+      - path: Geometry_GRP/pSphere4
+        weight: 1
+      - path: Joints_GRP
+        weight: 1
+      - path: Joints_GRP/Root
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee/L_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee/R_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck/Head
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: master_Curve
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walking
+      takeName: Take 001
+      firstFrame: 21
+      lastFrame: 41
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_GRP
+        weight: 1
+      - path: Geometry_GRP/pSphere4
+        weight: 1
+      - path: Joints_GRP
+        weight: 1
+      - path: Joints_GRP/Root
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee/L_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee/R_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck/Head
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: master_Curve
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 42
+      lastFrame: 62
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_GRP
+        weight: 1
+      - path: Geometry_GRP/pSphere4
+        weight: 1
+      - path: Joints_GRP
+        weight: 1
+      - path: Joints_GRP/Root
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee/L_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee/R_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck/Head
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: master_Curve
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      firstFrame: 63
+      lastFrame: 93
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_GRP
+        weight: 1
+      - path: Geometry_GRP/pSphere4
+        weight: 1
+      - path: Joints_GRP
+        weight: 1
+      - path: Joints_GRP/Root
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee/L_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee/R_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck/Head
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: master_Curve
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Spawn
+      takeName: Take 001
+      firstFrame: 94
+      lastFrame: 111
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_GRP
+        weight: 1
+      - path: Geometry_GRP/pSphere4
+        weight: 1
+      - path: Joints_GRP
+        weight: 1
+      - path: Joints_GRP/Root
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee/L_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee/R_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck/Head
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: master_Curve
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Special
+      takeName: Take 001
+      firstFrame: 112
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_GRP
+        weight: 1
+      - path: Geometry_GRP/pSphere4
+        weight: 1
+      - path: Joints_GRP
+        weight: 1
+      - path: Joints_GRP/Root
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee/L_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee/R_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck/Head
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: master_Curve
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: 'Cast '
+      takeName: Take 001
+      firstFrame: 140
+      lastFrame: 159
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_GRP
+        weight: 1
+      - path: Geometry_GRP/pSphere4
+        weight: 1
+      - path: Joints_GRP
+        weight: 1
+      - path: Joints_GRP/Root
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/L_Thigh/L_Knee/L_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee
+        weight: 1
+      - path: Joints_GRP/Root/hipsLower/R_Thigh/R_Knee/R_Foot
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/Neck/Head
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Joints_GRP/Root/hipsUpper/chest/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: master_Curve
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: Root
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

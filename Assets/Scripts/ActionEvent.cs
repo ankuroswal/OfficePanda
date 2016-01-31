@@ -7,6 +7,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class ActionEvent : MonoBehaviour 
 {
@@ -15,10 +16,13 @@ public class ActionEvent : MonoBehaviour
     public float SecondsToHappen;
     public bool ParentEvent;
 
+    public Action<bool> OnAction;
+
     private ActionEvent m_currentEvent;
     private bool m_triggerEvent;
     private float m_timecount;
 
+    
     void Start()
     {
         Init();
@@ -31,6 +35,7 @@ public class ActionEvent : MonoBehaviour
             Init();
             m_currentEvent = other.GetComponent<ActionEvent>();
             m_triggerEvent = true;
+            OnAction(true);
         }
     }
 

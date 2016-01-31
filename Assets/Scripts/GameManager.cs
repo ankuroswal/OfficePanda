@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public StressManager StressManager;
     public MusicManager MusicManager;
     public UIManager UIManager;
+    public AudioManager AudioManager;
 
     public float timer;
 
@@ -24,8 +25,7 @@ public class GameManager : MonoBehaviour
     {
         m_instance = this;
         m_currentTask = 0;
-        debugTask.CurrentStep = 0;
-        AddTask(debugTask);
+        MusicManager.StartPlaying();
     }
 
     void Update()
