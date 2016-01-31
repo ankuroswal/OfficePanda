@@ -1,0 +1,10 @@
+diff a/Assets/Scenes/office.unity b/Assets/Scenes/office.unity	(rejected hunks)
+@@ -157,7 +157,7 @@
+   - 33: {fileID: 139811481}
+   - 65: {fileID: 139811480}
+   - 23: {fileID: 139811479}
+-  m_Layer: 0
++  m_Layer: 10
+   m_Name: Cube (2)
+   m_TagString: Untagged
+   m_Icon: {fileID: 0}
