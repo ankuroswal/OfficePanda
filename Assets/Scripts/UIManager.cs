@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
         TaskUI taskUi = Instantiate(taskUiPrefab, TaskListContent.transform.position, TaskListContent.transform.rotation) as TaskUI;
         taskUi.task = task;
         taskUi.toggle.isOn = false;
+        taskUi.toggle.interactable = false;
         taskUi.taskText.text = task.Name;
         taskUi.gameObject.SetActive(true);
         taskUi.transform.SetParent(TaskListContent.transform);

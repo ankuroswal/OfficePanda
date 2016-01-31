@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PawMovement : MonoBehaviour {
 
     public float sensitivity = 1;
-    private Rigidbody rb;
+    public Rigidbody rb;
     public Vector3 movement;
     private Transform myTransform;
 
@@ -38,9 +38,9 @@ public class PawMovement : MonoBehaviour {
     // Use this for initialization
     void Awake ()
     {
-        rb = GetComponent<Rigidbody>();
-                previousObjects = new Dictionary<ActionEvent, Rigidbody>();
+        previousObjects = new Dictionary<ActionEvent, Rigidbody>();
 	}
+
     private void Start()
     {
         targetMouseSpeed = mouseSpeed;
@@ -151,6 +151,7 @@ public class PawMovement : MonoBehaviour {
         if (pos.z > limitHigh.z) pos.z = limitHigh.z;
 
         myTransform.position = pos;
+        paw = transform;
     }
 
     private void OnTriggerEnter(Collider other)
