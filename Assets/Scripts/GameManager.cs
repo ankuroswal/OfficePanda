@@ -20,10 +20,10 @@ public class GameManager : MonoBehaviour
     
     public void ActionEventNotify(ActionEdge notifiedEdge)
     {
-        Debug.Log(notifiedEdge.StartAction.EventName + "---" + notifiedEdge.EndAction.EventName);
         ActionEdge currentEdge = TaskList[m_currentTask].GetCurrentStep().GetEdge();
         if (currentEdge.isEqual(notifiedEdge))
         {
+            Debug.Log(notifiedEdge.StartAction.EventName + "---" + notifiedEdge.EndAction.EventName);
             TaskList[m_currentTask].ProceedTask();
         }
     }

@@ -6,7 +6,7 @@ public class Task  : MonoBehaviour
     public string Name;
     public float StressAmount = 1.0f;
     public float ReliefAmount = 10.0f;
-    public List<Step> StepList;
+    public Step[] StepList;
     private int m_currentstep;
 
     public bool ProceedTask()
@@ -18,7 +18,7 @@ public class Task  : MonoBehaviour
 
     public bool TaskComplete()
     {
-        return StepList.Count >= m_currentstep;
+        return StepList.Length >= m_currentstep;
     }
 
     public Step GetCurrentStep()

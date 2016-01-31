@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class StressManager  : MonoBehaviour
+public class StressManager : MonoBehaviour
 {
     // PUBLIC
-    public float StressCountTime = 1.0f;
-    public float MaximumStress = 10.0f;
+    public float StressCountTime = 10.0f;
+    public float MaximumStress = 300.0f;
+    public Text StressLabel;
 
     // PRIVATE
     private static StressManager m_instance;
@@ -35,13 +37,13 @@ public class StressManager  : MonoBehaviour
     void Update()
     {
         m_timer += Time.deltaTime;
-        if(m_timer >= StressCountTime)
+        if (m_timer >= StressCountTime)
         {
             m_timer -= StressCountTime;
             List<Task> tasks = GameManager.Instance.TaskList;
             if (tasks != null)
             {
-                for(int i = 0; i < tasks.Count; i++)
+                for (int i = 0; i < tasks.Count; i++)
                     m_currentStress += (tasks[i].StressAmount);
             }
         }
