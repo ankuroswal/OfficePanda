@@ -32,6 +32,16 @@ public class StressManager  : MonoBehaviour
 
     }
 
+    public void SubtractStress(float amount)
+    {
+        m_currentStress -= amount;
+    }
+
+    public void AddStress(float amount)
+    {
+        m_currentStress += amount;
+    }
+
     void Update()
     {
         m_timer += Time.deltaTime;
@@ -42,7 +52,7 @@ public class StressManager  : MonoBehaviour
             if (tasks != null)
             {
                 for(int i = 0; i < tasks.Count; i++)
-                    m_currentStress += (tasks[i].StressAmount);
+                    AddStress(tasks[i].StressAmount);
             }
         }
     }

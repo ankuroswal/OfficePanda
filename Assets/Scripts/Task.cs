@@ -18,6 +18,7 @@ public class Task  : MonoBehaviour
 
     public bool TaskComplete()
     {
+        UIManager.Instance.OnTaskComplete(this);
         return StepList.Count >= m_currentstep;
     }
 
