@@ -638,6 +638,7 @@ GameObject:
   - 4: {fileID: 672674935}
   - 114: {fileID: 672674934}
   - 54: {fileID: 672674933}
+  - 135: {fileID: 672674936}
   m_Layer: 0
   m_Name: Panda Paw
   m_TagString: Untagged
@@ -673,16 +674,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 1
   movement: {x: 0, y: 0, z: 0}
-  limitLow: {x: -6, y: 0, z: -3}
-  limitHigh: {x: 6.5, y: 20, z: 4}
+  limitLow: {x: -7, y: 0, z: -3}
+  limitHigh: {x: 7, y: 20, z: 4}
   upDownMovementSpeed: 500
   wristMovementSpeed: 100
   armRotateSpeed: 20
   armRotationDamping: 0.5
-  armRotateMin: 200
-  armRotateMax: 360
+  armRotateLeft: 100
+  armRotateRight: 210
   mouseSpeedLimitLow: 100
   mouseSpeedLimitHigh: 400
+  grabCollider: {fileID: 672674936}
+  paw: {fileID: 0}
+  grabbedItems: []
 --- !u!4 &672674935
 Transform:
   m_ObjectHideFlags: 0
@@ -696,6 +700,18 @@ Transform:
   - {fileID: 1600553960}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!135 &672674936
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 672674932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: -0.13, y: -0.28, z: -0.27}
 --- !u!1 &674881511
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,7 +968,7 @@ Transform:
   - {fileID: 382281161}
   - {fileID: 437869063}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &963191841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,6 +1809,7 @@ GameObject:
   - 135: {fileID: 2084240208}
   - 23: {fileID: 2084240207}
   - 54: {fileID: 2084240211}
+  - 114: {fileID: 2084240212}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1852,11 +1869,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2084240206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16279694, y: 1.35, z: 2.08}
+  m_LocalPosition: {x: 1.8698223, y: 4.0145946, z: 1.8790002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!54 &2084240211
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1864,7 +1881,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2084240206}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1872,3 +1889,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2084240212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2084240206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256165602175a734594b58eaf1710fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventName: StressBall
+  Collider: {fileID: 2084240208}
+  SecondsToHappen: 3
