@@ -7,32 +7,39 @@ public class Task  : MonoBehaviour
     public float StressAmount = 1.0f;
     public float ReliefAmount = 10.0f;
     public List<Step> StepList;
-    private int m_currentstep;
+
+    private int m_currentStep;
+
+    public int CurrentStep
+    {
+       get { return m_currentStep; }
+       set { m_currentStep = value;}
+    }
+
 
     public bool ProceedTask()
     {
-        m_currentstep++;
-
+        CurrentStep++;
         if (TaskComplete())
         {
-            UIManager.Instance.OnTaskComplete(this);
-            return false;
+            GameManager.Instance.UIManager.OnTaskComplete(this);
         }
-        return true;
+       
+        return !TaskComplete();
     }
 
     public bool TaskComplete()
     {
-        return StepList.Count <= m_currentstep;
+        return StepList.Count <= CurrentStep;
     }
 
     public Step GetCurrentStep()
     {
-        return StepList[m_currentstep];
+        return StepList[CurrentStep];
     }
 
     public void RelieveStress()
     {
-        StressManager.Instance.RelieveStress(ReliefAmount);
+        GameManager.Instance.StressManager.RelieveStress(ReliefAmount);
     }
 }

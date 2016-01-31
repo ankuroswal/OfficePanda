@@ -10,27 +10,11 @@ public class UIManager : MonoBehaviour
     public GameObject TaskListContent;
     public TaskUI taskUiPrefab;
 
-    private static UIManager m_instance;
-    public static UIManager Instance
-    {
-        get { return m_instance; }
-    }
-
-    void Awake()
-    {
-        m_instance = this;
-    }
-
-    private void Update()
+    void Update()
     {
         TimeSpan ts = TimeSpan.FromSeconds(GameManager.Instance.timer);
         gameTime.text = ts.Minutes.ToString("00") + ":" + ts.Seconds.ToString("00");
-        stressMeter.fillAmount = StressManager.Instance.Stress;
-
-        if (Input.GetKeyDown(KeyCode.A))
-            StressManager.Instance.AddStress(1);
-        if (Input.GetKeyDown(KeyCode.D))
-            StressManager.Instance.SubtractStress (1);
+        stressMeter.fillAmount = GameManager.Instance.StressManager.Stress;
     }
 
     public void OnAddTask(Task task)

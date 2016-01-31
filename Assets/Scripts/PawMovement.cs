@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class PawMovement : MonoBehaviour {
 
-
     public float sensitivity = 1;
     private Rigidbody rb;
     public Vector3 movement;
@@ -28,7 +27,7 @@ public class PawMovement : MonoBehaviour {
     private float mouseSpeed;
     private float targetMouseSpeed;
     private float armRotation;
-    private float totalArmRotation;
+
     private Dictionary<ActionEvent, Rigidbody> previousObjects;
 
     public Collider grabCollider;
@@ -40,8 +39,7 @@ public class PawMovement : MonoBehaviour {
     void Awake ()
     {
         rb = GetComponent<Rigidbody>();
-        grabCollider = GetComponent<Collider>();
-        previousObjects = new Dictionary<ActionEvent, Rigidbody>();
+                previousObjects = new Dictionary<ActionEvent, Rigidbody>();
 	}
     private void Start()
     {
@@ -176,7 +174,6 @@ public class PawMovement : MonoBehaviour {
             //Rigidbody rb = GetRigidbody(interactable);
             //rb.useGravity = true;
             //rb.isKinematic = false;
-
         }
     }
 

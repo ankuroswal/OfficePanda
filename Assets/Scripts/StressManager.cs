@@ -10,23 +10,12 @@ public class StressManager : MonoBehaviour
     public Text StressLabel;
 
     // PRIVATE
-    private static StressManager m_instance;
     private float m_timer = 0.0f;
     private float m_currentStress = 0.0f;
 
     public float Stress
     {
         get { return (m_currentStress / MaximumStress); }
-    }
-
-    public static StressManager Instance
-    {
-        get { return m_instance; }
-    }
-
-    void Awake()
-    {
-        m_instance = this;
     }
 
     void Start()

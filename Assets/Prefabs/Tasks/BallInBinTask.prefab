@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.0634723, y: 3.713351, z: 2.3276749}
+  m_LocalPosition: {x: -5.06347227, y: 3.71335101, z: 2.32767487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2ee9900ede94740b9f44e877347fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Start: {fileID: 11477510, guid: c653f08a86980704489dde5d345561e3, type: 2}
-  End: {fileID: 11449822, guid: 05b0c4279e046ad4f8e1915a6c988386, type: 2}
+  Start: {fileID: 0}
+  End: {fileID: 0}
   StepName: PlaceInBin
 --- !u!114 &11497644
 MonoBehaviour:
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Place Ball In Bin
-  StressAmount: 0.1
+  StressAmount: .100000001
   ReliefAmount: 10
   StepList:
   - {fileID: 11440398}
@@ -69,6 +69,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: Name
       value: Place Ball In Bin
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Start
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: End
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

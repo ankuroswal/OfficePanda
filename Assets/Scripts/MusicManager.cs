@@ -64,7 +64,7 @@ public class MusicManager : MonoBehaviour
     void Update()
     {
         if (!m_canPlay) return;
-        m_normalSource.volume = 1.0f - StressManager.Instance.Stress;
-        m_stressSource.volume = StressManager.Instance.Stress;
+        m_normalSource.volume = 1.0f - GameManager.Instance.StressManager.Stress;
+        m_stressSource.volume = GameManager.Instance.StressManager.Stress;
     }
 }

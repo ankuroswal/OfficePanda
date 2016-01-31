@@ -4,6 +4,10 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour 
 {
     public List<Task> TaskList;
+    public StressManager StressManager;
+    public MusicManager MusicManager;
+    public UIManager UIManager;
+
     public float timer;
 
     public Task debugTask;
@@ -15,26 +19,24 @@ public class GameManager : MonoBehaviour
 
     private static GameManager m_instance;
     private int m_currentTask;
-    private bool gameInProgress;
 
     void Start()
     {
         m_instance = this;
         m_currentTask = 0;
+        debugTask.CurrentStep = 0;
         AddTask(debugTask);
     }
 
-    private void Update()
+    void Update()
     {
-        //if (!gameInProgress) return;
-
         timer += Time.deltaTime;
     }
 
     public void AddTask(Task task)
     {
         TaskList.Add(task);
-        UIManager.Instance.OnAddTask(task);
+        UIManager.OnAddTask(task);
     }
     
     public void ActionEventNotify(ActionEdge notifiedEdge)
