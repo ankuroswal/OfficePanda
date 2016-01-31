@@ -658,7 +658,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 390447409}
   - 33: {fileID: 390447412}
-  - 64: {fileID: 390447411}
   - 23: {fileID: 390447410}
   m_Layer: 0
   m_Name: Plane
@@ -703,18 +702,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &390447411
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 390447408}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &390447412
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4296,11 +4283,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TaskList:
   - {fileID: 1537828045}
-  - {fileID: 595976173}
   StressManager: {fileID: 1926573190}
   MusicManager: {fileID: 1926573194}
   UIManager: {fileID: 1926573193}
-  AudioManager: {fileID: 0}
+  AudioManager: {fileID: 2027269425}
   timer: 0
   debugTask: {fileID: 0}
 --- !u!4 &1926573192

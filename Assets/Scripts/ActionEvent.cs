@@ -35,7 +35,7 @@ public class ActionEvent : MonoBehaviour
             Init();
             m_currentEvent = other.GetComponent<ActionEvent>();
             m_triggerEvent = true;
-            OnAction(true);
+            OnAction += ActionTrigger;
         }
     }
 
@@ -50,11 +50,16 @@ public class ActionEvent : MonoBehaviour
         {
             if (m_timecount > SecondsToHappen)
             {
-                GameManager.Instance.ActionEventNotify(new ActionEdge(this, m_currentEvent));
                 m_triggerEvent = false;
+                OnAction(true);
             }
             m_timecount += Time.deltaTime;
         }
+    }
+
+    private void ActionTrigger(bool Action)
+    {
+        GameManager.Instance.ActionEventNotify(new ActionEdge(this, m_currentEvent));
     }
 
     private void Init()
