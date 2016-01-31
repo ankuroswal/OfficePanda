@@ -66,19 +66,24 @@ public class PawMovement : MonoBehaviour {
         {
             grabCollider.enabled = true;
             
-            for (int i = 0; i < grabbedItems.Count; i++)
+            if (grabbedItems.Count > 0)
             {
-                grabbedItems[i].transform.SetParent(transform);
-                Destroy(grabbedItems[i].GetComponent<Rigidbody>());
-                //Rigidbody itemRB = GetRigidbody(grabbedItems[i]);
-                //itemRB.isKinematic = true;
-                //itemRB.useGravity = false;
-
-                //grabbedItems[i].GetComponent<Rigidbody>().velocity = rb.velocity;
-                //grabbedItems[i].GetComponent<Transform>().Rotate(0, 0, armRotation);
-                
-
+                grabbedItems[0].transform.SetParent(transform);
+                grabbedItems[0].gameObject.layer = LayerMask.NameToLayer("PickedUp");
+                Destroy(grabbedItems[0].GetComponent<Rigidbody>());
             }
+            //for (int i = 0; i < grabbedItems.Count; i++)
+            //{
+
+            //    Rigidbody itemRB = GetRigidbody(grabbedItems[i]);
+            //    itemRB.isKinematic = true;
+            //    itemRB.useGravity = false;
+
+            //    grabbedItems[i].GetComponent<Rigidbody>().velocity = rb.velocity;
+            //    grabbedItems[i].GetComponent<Transform>().Rotate(0, 0, armRotation);
+
+
+            //}
         }
         else
         {
@@ -86,6 +91,8 @@ public class PawMovement : MonoBehaviour {
             for (int i = 0; i < grabbedItems.Count; i++)
             {
                 grabbedItems[i].transform.SetParent(null);
+                grabbedItems[i].gameObject.layer = LayerMask.NameToLayer("Objects");
+
                 grabbedItems[i].gameObject.AddComponent<Rigidbody>();
                 //Rigidbody itemRB2 = GetRigidbody(grabbedItems[i]);
                 //itemRB2.useGravity = true;
