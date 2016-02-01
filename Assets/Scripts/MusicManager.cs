@@ -24,11 +24,12 @@ public class MusicManager : MonoBehaviour
     {
         m_instance = this;
         AudioSource[] sources = Camera.main.gameObject.GetComponents<AudioSource>();
-        if(sources.Length != 2)
-        {
-            //Debug.LogError("Did NOT find 2 audio sources on the main camera object!");
-            return;
-        }
+        Debug.Log(sources.Length);
+        //if(sources.Length >= 2)
+        //{
+        //    Debug.LogError("Did NOT find 2 audio sources on the main camera object!");
+        //    return;
+        //}
         m_normalSource = sources[0];
         m_stressSource = sources[1];
         m_canPlay = true;

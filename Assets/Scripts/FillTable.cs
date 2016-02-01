@@ -38,7 +38,7 @@ public class FillTable : MonoBehaviour
         
     void Update()
     {
-        if (Input.GetKey(KeyCode.F) || GameManager.Instance.StressManager.Stress == 1)
+        if (Input.GetKey(KeyCode.F) || GameManager.Instance.StressManager.Stress >= 1)
         {
             Flip();
         }
@@ -51,7 +51,7 @@ public class FillTable : MonoBehaviour
             if (m_rotate >= 1)
             {
                 m_startRotate = false;
-
+                GameManager.Instance.Restart();
             }
          
         }

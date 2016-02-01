@@ -5,20 +5,14 @@ using UnityEngine.UI;
 public class TaskUI : MonoBehaviour
 {
     public Task task;
-    public Sprite[] taskImages;
-    public Image currentDisplayedTask;
-
-    public void Awake()
-    {
-    }
-
-    public void SetImageByIndex(int index)
-    {
-        if (taskImages.Length > index)
-        {
-            currentDisplayedTask.sprite = taskImages[index];
-        }
-    }
+    public Text taskText;
+    public Toggle toggle;
+ 
+     public void Awake()
+     {
+         taskText = GetComponentInChildren<Text>();
+         toggle = GetComponentInChildren<Toggle>();
+     }
 
 }
 

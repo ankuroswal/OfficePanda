@@ -31,14 +31,37 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         gameStart = false;
         CameraAnim = Camera.main.GetComponent<Animator>();
-        CameraAnim.SetBool("FirstDay", true);
-        DontDestroyOnLoad(transform.gameObject);   
+
+        if (DayTracker.currentDay == 0)
+            CameraAnim.SetBool("FirstDay", true);
+        else
+            CameraAnim.SetBool("FirstDay", false);
     }
 
     void Start()
     {
-        MainMenuScreen.SetActive(true);
-        GameScreen.SetActive(false);
+        if (DayTracker.currentDay == 0)
+        {
+            MainMenuScreen.SetActive(true);
+            GameScreen.SetActive(false);
+        }
+        else if (DayTracker.currentDay < 5)
+        {
+            MainMenuScreen.SetActive(false);
+            GameScreen.SetActive(true);
+            gameStart = true;
+        }
+        else
+        {
+            Restart();
+        }
+
+        for (int i = 0; i < DayTracker.currentDay + 1; i++)
+        {
+            AddTask(TaskList[i]);
+        }
+        MusicManager.StartPlaying();
+
         m_instance = this;
         m_currentTask = 0;
     }
@@ -48,8 +71,8 @@ public class GameManager : MonoBehaviour
         CameraAnim.SetTrigger("Play");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
         StartCoroutine(StartGame());
-        MusicManager.StartPlaying();
     }
 
     private IEnumerator StartGame()
@@ -63,39 +86,49 @@ public class GameManager : MonoBehaviour
 
     public void AddTask(Task task)
     {
-        TaskList.Add(task);
+        //TaskList.Add(task);
         UIManager.OnAddTask(task);
     }
     
     public void ActionEventNotify(ActionEdge notifiedEdge)
     {
         if (!gameStart) return;
-        if (TaskList.Count >= m_currentTask) return;
+        if (TaskList.Count <= m_currentTask) return;
 
         ActionEdge currentEdge = TaskList[m_currentTask].GetCurrentStep().GetEdge();
         if (currentEdge.isEqual(notifiedEdge))
         {
-            Debug.Log(notifiedEdge.StartAction.EventName + "---" + notifiedEdge.EndAction.EventName);
             TaskList[m_currentTask].ProceedTask();
             if (TaskList[m_currentTask].TaskComplete())
             {
-                if (day >= m_currentTask)
-                {
-                    ShowOfficeScene();
-                }
                 m_currentTask++;
+                if (DayTracker.currentDay < m_currentTask)
+                {
+                    ShowDayScene();
+                }
             }
         }
     }
 
     public void ShowDayScene()
     {
-        SceneManager.LoadScene("Day");
+        SceneManager.LoadScene("Sunset");
     }
 
-    public void ShowOfficeScene()
+    public void Restart()
     {
-        SceneManager.LoadScene("yoloscene2");
-        day++;
+        StartCoroutine(Re());
     }
+
+    public IEnumerator Re()
+    {
+        yield return new WaitForSeconds(3f);
+        DayTracker.currentDay = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        SceneManager.LoadScene("yoloscene2");
+    }
+
+
 }
