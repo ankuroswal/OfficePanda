@@ -8,22 +8,20 @@
 using UnityEngine;
 using System.Collections;
 
-public class ActionEdge 
+public class PlayAudioOnAction : MonoBehaviour 
 {
-    public ActionEvent StartAction;
-    public ActionEvent EndAction;
+    public int AudioIndex;
 
-    public ActionEdge(ActionEvent start, ActionEvent end)
+    private ActionEvent m_event;
+
+    public void Awake()
     {
-        StartAction = start;
-        EndAction = end;
+        m_event = GetComponent<ActionEvent>();
+        m_event.OnAction += PlayAudio;
     }
 
-    public bool isEqual(ActionEdge other)
+    private void PlayAudio(bool shouldPlay)
     {
-        return (StartAction.EventName == other.StartAction.EventName &&
-               EndAction.EventName == other.EndAction.EventName) ||
-               (EndAction.EventName == other.StartAction.EventName &&
-               StartAction.EventName == other.EndAction.EventName);
+        GameManager.Instance.AudioManager.PlayAudioClip(AudioIndex);
     }
 }

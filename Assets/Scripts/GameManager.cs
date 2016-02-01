@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Animator CameraAnim;
     public GameObject MainMenuScreen;
     public GameObject GameScreen;
+    public AudioManager AudioManager;
 
     public int day = 0;
     public bool gameStart = false;
@@ -40,8 +41,6 @@ public class GameManager : MonoBehaviour
         GameScreen.SetActive(false);
         m_instance = this;
         m_currentTask = 0;
-        //debugTask.CurrentStep = 0;
-        //AddTask(debugTask);
     }
 
     public void PlayGame()
@@ -50,6 +49,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(StartGame());
+        MusicManager.StartPlaying();
     }
 
     private IEnumerator StartGame()
@@ -69,11 +69,22 @@ public class GameManager : MonoBehaviour
     
     public void ActionEventNotify(ActionEdge notifiedEdge)
     {
+        if (!gameStart) return;
+        if (TaskList.Count >= m_currentTask) return;
+
         ActionEdge currentEdge = TaskList[m_currentTask].GetCurrentStep().GetEdge();
         if (currentEdge.isEqual(notifiedEdge))
         {
             Debug.Log(notifiedEdge.StartAction.EventName + "---" + notifiedEdge.EndAction.EventName);
             TaskList[m_currentTask].ProceedTask();
+            if (TaskList[m_currentTask].TaskComplete())
+            {
+                if (day >= m_currentTask)
+                {
+                    ShowOfficeScene();
+                }
+                m_currentTask++;
+            }
         }
     }
 
@@ -84,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowOfficeScene()
     {
-        SceneManager.LoadScene("Office");
+        SceneManager.LoadScene("yoloscene2");
         day++;
     }
 }

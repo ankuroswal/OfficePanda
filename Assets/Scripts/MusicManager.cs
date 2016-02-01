@@ -32,9 +32,10 @@ public class MusicManager : MonoBehaviour
         m_normalSource = sources[0];
         m_stressSource = sources[1];
         m_canPlay = true;
+
     }
 
-    void Init()
+    private void Init()
     {
         if (!m_canPlay) return;
         m_normalSource.clip = NormalTrack;
@@ -46,7 +47,7 @@ public class MusicManager : MonoBehaviour
         m_normalSource.loop = true;
     }
 
-    void StartPlaying()
+    public void StartPlaying()
     {
         if (!m_canPlay) return;
         Init();
@@ -54,7 +55,7 @@ public class MusicManager : MonoBehaviour
         m_stressSource.Play();
     }
 
-    void StopPlaying()
+    public void StopPlaying()
     {
         if (!m_canPlay) return;
         m_normalSource.Stop();

@@ -7,6 +7,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class ActionEvent : MonoBehaviour 
 {
@@ -15,22 +16,31 @@ public class ActionEvent : MonoBehaviour
     public float SecondsToHappen;
     public bool ParentEvent;
 
+    public Action<bool> OnAction;
+
     private ActionEvent m_currentEvent;
     private bool m_triggerEvent;
     private float m_timecount;
 
+    
     void Start()
     {
         Init();
     }
 
     void OnTriggerEnter(Collider other)
-    { 
-        if (ParentEvent)
+    {
+        ActionEvent interactable = other.GetComponent<ActionEvent>();
+
+        if (interactable != null)
         {
-            Init();
-            m_currentEvent = other.GetComponent<ActionEvent>();
-            m_triggerEvent = true;
+            if (ParentEvent)
+            {
+                Init();
+                m_currentEvent = interactable;
+                m_triggerEvent = true;
+                OnAction += ActionTrigger;
+            }
         }
     }
 
@@ -45,11 +55,16 @@ public class ActionEvent : MonoBehaviour
         {
             if (m_timecount > SecondsToHappen)
             {
-                GameManager.Instance.ActionEventNotify(new ActionEdge(this, m_currentEvent));
                 m_triggerEvent = false;
+                OnAction(true);
             }
             m_timecount += Time.deltaTime;
         }
+    }
+
+    private void ActionTrigger(bool Action)
+    {
+        GameManager.Instance.ActionEventNotify(new ActionEdge(this, m_currentEvent));
     }
 
     private void Init()

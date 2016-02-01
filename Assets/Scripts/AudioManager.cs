@@ -8,22 +8,18 @@
 using UnityEngine;
 using System.Collections;
 
-public class ActionEdge 
+public class AudioManager : MonoBehaviour 
 {
-    public ActionEvent StartAction;
-    public ActionEvent EndAction;
+    public AudioClip[] AudioClips;
+    public AudioSource AudioSource;
 
-    public ActionEdge(ActionEvent start, ActionEvent end)
+    public void PlayAudioClip(int audioClipIndex)
     {
-        StartAction = start;
-        EndAction = end;
+        AudioSource.Stop();
+        AudioSource.volume = 1.0f;
+        AudioSource.loop = false;
+        AudioSource.clip = AudioClips[audioClipIndex];
+        AudioSource.Play();
     }
 
-    public bool isEqual(ActionEdge other)
-    {
-        return (StartAction.EventName == other.StartAction.EventName &&
-               EndAction.EventName == other.EndAction.EventName) ||
-               (EndAction.EventName == other.StartAction.EventName &&
-               StartAction.EventName == other.EndAction.EventName);
-    }
 }

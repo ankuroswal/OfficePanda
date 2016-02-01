@@ -1,11 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------------------------------------
-// - Confidential Information                                                                                          
-// - Copyright 20#YEARSHORT#, Obsidian Entertainment, Inc.                                                             
-// - All rights reserved.  
-// - Created by: #AUTHOR# on #DATE#                                                                                    
-// ---------------------------------------------------------------------------------------------------------------------
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class FillTable : MonoBehaviour 
@@ -39,11 +32,13 @@ public class FillTable : MonoBehaviour
                 m_startRotate = true;
             }
         }
+
+        GameManager.Instance.AudioManager.PlayAudioClip(0);
     }
         
     void Update()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.F) || GameManager.Instance.StressManager.Stress == 1)
         {
             Flip();
         }

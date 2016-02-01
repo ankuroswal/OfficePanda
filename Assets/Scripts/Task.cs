@@ -8,6 +8,7 @@ public class Task  : MonoBehaviour
     public float StressAmount = 1.0f;
     public float ReliefAmount = 10.0f;
     public List<Step> StepList;
+    public int AudioClip = -1;
 
     public Sprite[] taskImages;
 
@@ -19,6 +20,14 @@ public class Task  : MonoBehaviour
        set { m_currentStep = value;}
     }
 
+    public void StartTask()
+    {
+        m_currentStep = 0;
+        if (AudioClip > 0)
+        {
+            GameManager.Instance.AudioManager.PlayAudioClip(AudioClip);
+        }
+    }
 
     public bool ProceedTask()
     {
@@ -27,8 +36,9 @@ public class Task  : MonoBehaviour
         if (TaskComplete())
         {
             GameManager.Instance.UIManager.OnTaskComplete(this);
+            return false;
         }
-       
+
         return !TaskComplete();
     }
 

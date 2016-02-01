@@ -35,6 +35,8 @@ public class StressManager : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.Instance.gameStart) return;
+
         m_timer += Time.deltaTime;
         if(m_timer >= StressCountTime)
         {
